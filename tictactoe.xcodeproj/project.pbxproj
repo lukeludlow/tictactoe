@@ -45,6 +45,7 @@
 		A3B860A1256F22B200194C5A /* tictactoeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tictactoeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3B860A5256F22B200194C5A /* tictactoeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tictactoeUITests.swift; sourceTree = "<group>"; };
 		A3B860A7256F22B200194C5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A3B860B6256F232500194C5A /* readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +76,7 @@
 		A3B8607C256F22B100194C5A = {
 			isa = PBXGroup;
 			children = (
+				A3B860B6256F232500194C5A /* readme.md */,
 				A3B86087256F22B100194C5A /* tictactoe */,
 				A3B86099256F22B200194C5A /* tictactoeTests */,
 				A3B860A4256F22B200194C5A /* tictactoeUITests */,
