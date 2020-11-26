@@ -11,7 +11,8 @@ import SwiftUI
 struct tictactoeApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Home()
+                .environmentObject(DataStore())
         }
     }
 }
