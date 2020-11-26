@@ -4,6 +4,9 @@ this app was developed for iOS 14.2 using Xcode 12.2
 
 it was created using SwiftUI (not UIKit)
 
+uses firebase
+pod 'Firebase/Auth'
+
 
 resources
 

@@ -3,13 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		89C10F9FD3EC9C0A384E3BC6 /* Pods_tictactoe_tictactoeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37257BDE1C40C5643173BC7B /* Pods_tictactoe_tictactoeUITests.framework */; };
 		A308BE13257038790077EF9B /* ProfileSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A308BE12257038790077EF9B /* ProfileSummary.swift */; };
 		A308BE1825703ADB0077EF9B /* HikeBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A308BE1725703ADB0077EF9B /* HikeBadge.swift */; };
 		A308BE1D25703C720077EF9B /* ProfileEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A308BE1C25703C720077EF9B /* ProfileEditor.swift */; };
+		A308BE22257049680077EF9B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A308BE21257049680077EF9B /* GoogleService-Info.plist */; };
+		A308BE23257049680077EF9B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A308BE21257049680077EF9B /* GoogleService-Info.plist */; };
+		A308BE24257049680077EF9B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A308BE21257049680077EF9B /* GoogleService-Info.plist */; };
 		A3693A93256F2E7300CCAEE1 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3693A92256F2E7300CCAEE1 /* CircleImage.swift */; };
 		A3693A98256F2FA500CCAEE1 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3693A97256F2FA500CCAEE1 /* MapView.swift */; };
 		A3693A9E256F355200CCAEE1 /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3693A9D256F355200CCAEE1 /* Landmark.swift */; };
@@ -40,11 +44,15 @@
 		A3693B4425702F5000CCAEE1 /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3693B4325702F5000CCAEE1 /* CategoryRow.swift */; };
 		A3693B4A2570370600CCAEE1 /* ProfileHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3693B492570370600CCAEE1 /* ProfileHost.swift */; };
 		A3693B522570375000CCAEE1 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3693B512570375000CCAEE1 /* Profile.swift */; };
+		A37A05F025704D2A00E40A96 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37A05EF25704D2A00E40A96 /* SessionStore.swift */; };
+		A37A05F52570531500E40A96 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37A05F42570531400E40A96 /* User.swift */; };
 		A3B8608B256F22B100194C5A /* LandmarkDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B8608A256F22B100194C5A /* LandmarkDetail.swift */; };
 		A3B8608D256F22B200194C5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3B8608C256F22B200194C5A /* Assets.xcassets */; };
 		A3B86090256F22B200194C5A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3B8608F256F22B200194C5A /* Preview Assets.xcassets */; };
 		A3B8609B256F22B200194C5A /* tictactoeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B8609A256F22B200194C5A /* tictactoeTests.swift */; };
 		A3B860A6256F22B200194C5A /* tictactoeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B860A5256F22B200194C5A /* tictactoeUITests.swift */; };
+		CE5B58146ED0637F94CC8D29 /* Pods_tictactoeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41785E2FBA65131E4DC52102 /* Pods_tictactoeTests.framework */; };
+		E6BCFB24F93540050C399A49 /* Pods_tictactoe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67CE545F1CF36992511F5230 /* Pods_tictactoe.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,9 +73,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		006C813FF12A4ACD586C4649 /* Pods-tictactoeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tictactoeTests.debug.xcconfig"; path = "Target Support Files/Pods-tictactoeTests/Pods-tictactoeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2B65C11A28B460F2292CD58A /* Pods-tictactoe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tictactoe.release.xcconfig"; path = "Target Support Files/Pods-tictactoe/Pods-tictactoe.release.xcconfig"; sourceTree = "<group>"; };
+		37257BDE1C40C5643173BC7B /* Pods_tictactoe_tictactoeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tictactoe_tictactoeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		41785E2FBA65131E4DC52102 /* Pods_tictactoeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tictactoeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		67CE545F1CF36992511F5230 /* Pods_tictactoe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tictactoe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		76D7A865BE55884BC0F414EF /* Pods-tictactoeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tictactoeTests.release.xcconfig"; path = "Target Support Files/Pods-tictactoeTests/Pods-tictactoeTests.release.xcconfig"; sourceTree = "<group>"; };
+		7E2410D58666B14E65B538F6 /* Pods-tictactoe-tictactoeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tictactoe-tictactoeUITests.release.xcconfig"; path = "Target Support Files/Pods-tictactoe-tictactoeUITests/Pods-tictactoe-tictactoeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A308BE12257038790077EF9B /* ProfileSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSummary.swift; sourceTree = "<group>"; };
 		A308BE1725703ADB0077EF9B /* HikeBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikeBadge.swift; sourceTree = "<group>"; };
 		A308BE1C25703C720077EF9B /* ProfileEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditor.swift; sourceTree = "<group>"; };
+		A308BE21257049680077EF9B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A3693A92256F2E7300CCAEE1 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		A3693A97256F2FA500CCAEE1 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		A3693A9D256F355200CCAEE1 /* Landmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmark.swift; sourceTree = "<group>"; };
@@ -98,6 +114,8 @@
 		A3693B4325702F5000CCAEE1 /* CategoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
 		A3693B492570370600CCAEE1 /* ProfileHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHost.swift; sourceTree = "<group>"; };
 		A3693B512570375000CCAEE1 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		A37A05EF25704D2A00E40A96 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
+		A37A05F42570531400E40A96 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A3B86085256F22B100194C5A /* tictactoe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tictactoe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3B8608A256F22B100194C5A /* LandmarkDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkDetail.swift; sourceTree = "<group>"; };
 		A3B8608C256F22B200194C5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -110,6 +128,8 @@
 		A3B860A5256F22B200194C5A /* tictactoeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tictactoeUITests.swift; sourceTree = "<group>"; };
 		A3B860A7256F22B200194C5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3B860B6256F232500194C5A /* readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
+		A4F01E7ED1E5FA3EC1DA151D /* Pods-tictactoe-tictactoeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tictactoe-tictactoeUITests.debug.xcconfig"; path = "Target Support Files/Pods-tictactoe-tictactoeUITests/Pods-tictactoe-tictactoeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A6B0D86ACB48C29356DE4939 /* Pods-tictactoe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tictactoe.debug.xcconfig"; path = "Target Support Files/Pods-tictactoe/Pods-tictactoe.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +137,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6BCFB24F93540050C399A49 /* Pods_tictactoe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,6 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE5B58146ED0637F94CC8D29 /* Pods_tictactoeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,12 +153,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89C10F9FD3EC9C0A384E3BC6 /* Pods_tictactoe_tictactoeUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D21CC4EEC9DCDE067C2289B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				67CE545F1CF36992511F5230 /* Pods_tictactoe.framework */,
+				37257BDE1C40C5643173BC7B /* Pods_tictactoe_tictactoeUITests.framework */,
+				41785E2FBA65131E4DC52102 /* Pods_tictactoeTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		328A564560D14F05FB960C52 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A6B0D86ACB48C29356DE4939 /* Pods-tictactoe.debug.xcconfig */,
+				2B65C11A28B460F2292CD58A /* Pods-tictactoe.release.xcconfig */,
+				A4F01E7ED1E5FA3EC1DA151D /* Pods-tictactoe-tictactoeUITests.debug.xcconfig */,
+				7E2410D58666B14E65B538F6 /* Pods-tictactoe-tictactoeUITests.release.xcconfig */,
+				006C813FF12A4ACD586C4649 /* Pods-tictactoeTests.debug.xcconfig */,
+				76D7A865BE55884BC0F414EF /* Pods-tictactoeTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A3693A9C256F354500CCAEE1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +249,15 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		A39F6C0025704AE1007C5B77 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				A37A05EF25704D2A00E40A96 /* SessionStore.swift */,
+				A37A05F42570531400E40A96 /* User.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		A3B8607C256F22B100194C5A = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +266,8 @@
 				A3B86099256F22B200194C5A /* tictactoeTests */,
 				A3B860A4256F22B200194C5A /* tictactoeUITests */,
 				A3B86086256F22B100194C5A /* Products */,
+				328A564560D14F05FB960C52 /* Pods */,
+				0D21CC4EEC9DCDE067C2289B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -227,6 +284,8 @@
 		A3B86087256F22B100194C5A /* tictactoe */ = {
 			isa = PBXGroup;
 			children = (
+				A39F6C0025704AE1007C5B77 /* Login */,
+				A308BE21257049680077EF9B /* GoogleService-Info.plist */,
 				A3693B48257036F400CCAEE1 /* Profile */,
 				A3B8608C256F22B200194C5A /* Assets.xcassets */,
 				A3B86091256F22B200194C5A /* Info.plist */,
@@ -275,9 +334,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A3B860AA256F22B200194C5A /* Build configuration list for PBXNativeTarget "tictactoe" */;
 			buildPhases = (
+				A3B739125DDFA6E668213170 /* [CP] Check Pods Manifest.lock */,
 				A3B86081256F22B100194C5A /* Sources */,
 				A3B86082256F22B100194C5A /* Frameworks */,
 				A3B86083256F22B100194C5A /* Resources */,
+				33BAF3A5E0FE5238E1E67F18 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -292,6 +353,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A3B860AD256F22B200194C5A /* Build configuration list for PBXNativeTarget "tictactoeTests" */;
 			buildPhases = (
+				DC2B49468152CAC911C349D6 /* [CP] Check Pods Manifest.lock */,
 				A3B86092256F22B200194C5A /* Sources */,
 				A3B86093256F22B200194C5A /* Frameworks */,
 				A3B86094256F22B200194C5A /* Resources */,
@@ -310,9 +372,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A3B860B0256F22B200194C5A /* Build configuration list for PBXNativeTarget "tictactoeUITests" */;
 			buildPhases = (
+				EE79141C57F2B57DA9724EA0 /* [CP] Check Pods Manifest.lock */,
 				A3B8609D256F22B200194C5A /* Sources */,
 				A3B8609E256F22B200194C5A /* Frameworks */,
 				A3B8609F256F22B200194C5A /* Resources */,
+				BB2DFAF1C3F2277207918E5C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -380,6 +444,7 @@
 				A3693AFA256F3F0E00CCAEE1 /* twinlake.jpg in Resources */,
 				A3693AEF256F3F0E00CCAEE1 /* lakemcdonald.jpg in Resources */,
 				A3693AF9256F3F0E00CCAEE1 /* rainbowlake.jpg in Resources */,
+				A308BE22257049680077EF9B /* GoogleService-Info.plist in Resources */,
 				A3693AF2256F3F0E00CCAEE1 /* silversalmoncreek.jpg in Resources */,
 				A3693AF6256F3F0E00CCAEE1 /* chincoteague.jpg in Resources */,
 				A3693AAD256F36B800CCAEE1 /* landmarkData.json in Resources */,
@@ -393,6 +458,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A308BE23257049680077EF9B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,10 +466,114 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A308BE24257049680077EF9B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		33BAF3A5E0FE5238E1E67F18 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tictactoe/Pods-tictactoe-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tictactoe/Pods-tictactoe-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tictactoe/Pods-tictactoe-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A3B739125DDFA6E668213170 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-tictactoe-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB2DFAF1C3F2277207918E5C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tictactoe-tictactoeUITests/Pods-tictactoe-tictactoeUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tictactoe-tictactoeUITests/Pods-tictactoe-tictactoeUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tictactoe-tictactoeUITests/Pods-tictactoe-tictactoeUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DC2B49468152CAC911C349D6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-tictactoeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE79141C57F2B57DA9724EA0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-tictactoe-tictactoeUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A3B86081256F22B100194C5A /* Sources */ = {
@@ -430,7 +600,9 @@
 				A3693A9E256F355200CCAEE1 /* Landmark.swift in Sources */,
 				A3693AD7256F3C1D00CCAEE1 /* LandmarkRow.swift in Sources */,
 				A308BE13257038790077EF9B /* ProfileSummary.swift in Sources */,
+				A37A05F025704D2A00E40A96 /* SessionStore.swift in Sources */,
 				A3693ACC256F3AED00CCAEE1 /* tictactoeApp.swift in Sources */,
+				A37A05F52570531500E40A96 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,6 +756,7 @@
 		};
 		A3B860AB256F22B200194C5A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6B0D86ACB48C29356DE4939 /* Pods-tictactoe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -606,6 +779,7 @@
 		};
 		A3B860AC256F22B200194C5A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B65C11A28B460F2292CD58A /* Pods-tictactoe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -628,6 +802,7 @@
 		};
 		A3B860AE256F22B200194C5A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 006C813FF12A4ACD586C4649 /* Pods-tictactoeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -650,6 +825,7 @@
 		};
 		A3B860AF256F22B200194C5A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76D7A865BE55884BC0F414EF /* Pods-tictactoeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -672,6 +848,7 @@
 		};
 		A3B860B1256F22B200194C5A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4F01E7ED1E5FA3EC1DA151D /* Pods-tictactoe-tictactoeUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -692,6 +869,7 @@
 		};
 		A3B860B2256F22B200194C5A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E2410D58666B14E65B538F6 /* Pods-tictactoe-tictactoeUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
