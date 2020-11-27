@@ -48,17 +48,19 @@ struct Dashboard: View {
 //                database.updatePlayer(player: self.player!)
             }
             Button("lose") {
+                print("lose")
 //                self.player?.losses += 1
 //                database.updatePlayer(player: self.player!)
             }
         }.onAppear(perform: self.database.getPlayers)
         Button("logout") {
-            let success = self.session.signOut()
-            if success {
-                print("signed out successfully")
-            } else {
-                print("failed to sign out. please try again.")
-            }
+            print("logout")
+//            let success = self.session.signOut()
+//            if success {
+//                print("signed out successfully")
+//            } else {
+//                print("failed to sign out. please try again.")
+//            }
         }
     }
 }
