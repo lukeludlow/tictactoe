@@ -26,7 +26,7 @@ class FirebaseDatabaseStore: ObservableObject {
     
     func getGames() {
         ref.observe(DataEventType.value) { (snapshot) in
-            print(snapshot.value as Any)
+//            print(snapshot.value as Any)
             self.games = []
             for child in snapshot.children {
                 if let snapshot = child as? DataSnapshot,
@@ -53,8 +53,8 @@ class FirebaseDatabaseStore: ObservableObject {
     
     func getPlayers() {
         let postRef = ref.child("players")
-        let refHandle = postRef.observe(DataEventType.value) { (snapshot) in
-            print("getPlayers observed: \(snapshot.value as Any)")
+        postRef.observe(DataEventType.value) { (snapshot) in
+//            print("getPlayers observed: \(snapshot.value as Any)")
             self.players = []
             for child in snapshot.children {
                 if let snapshot = child as? DataSnapshot,

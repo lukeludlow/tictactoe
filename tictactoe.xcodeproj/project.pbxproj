@@ -199,12 +199,45 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		A3693A9C256F354500CCAEE1 /* Models */ = {
+		A33FBA6625717B81009204DC /* OldReference */ = {
 			isa = PBXGroup;
 			children = (
+				A3693B3E25702E2500CCAEE1 /* LandmarkHome.swift */,
+				A3693AAA256F361400CCAEE1 /* SupportingViews */,
+				A33FBA6725717BA3009204DC /* OldResources */,
 				A3693A9D256F355200CCAEE1 /* Landmark.swift */,
 				A3693AA5256F359400CCAEE1 /* LandmarkDataData.swift */,
 				A3693B09256F4FC600CCAEE1 /* DataStore.swift */,
+				A3B8608A256F22B100194C5A /* LandmarkDetail.swift */,
+				A3693AFE256F401F00CCAEE1 /* LandmarkList.swift */,
+				A3693B48257036F400CCAEE1 /* Profile */,
+			);
+			path = OldReference;
+			sourceTree = "<group>";
+		};
+		A33FBA6725717BA3009204DC /* OldResources */ = {
+			isa = PBXGroup;
+			children = (
+				A3693AE7256F3F0D00CCAEE1 /* chilkoottrail.jpg */,
+				A3693AEA256F3F0E00CCAEE1 /* chincoteague.jpg */,
+				A3693AEB256F3F0E00CCAEE1 /* hiddenlake.jpg */,
+				A3693AE8256F3F0D00CCAEE1 /* icybay.jpg */,
+				A3693AE3256F3F0D00CCAEE1 /* lakemcdonald.jpg */,
+				A3693AED256F3F0E00CCAEE1 /* rainbowlake.jpg */,
+				A3693AE6256F3F0D00CCAEE1 /* silversalmoncreek.jpg */,
+				A3693AEC256F3F0E00CCAEE1 /* stmarylake.jpg */,
+				A3693AE4256F3F0D00CCAEE1 /* turtlerock.jpg */,
+				A3693AEE256F3F0E00CCAEE1 /* twinlake.jpg */,
+				A3693AE5256F3F0D00CCAEE1 /* umbagog.jpg */,
+				A3693AE9256F3F0D00CCAEE1 /* charleyrivers.jpg */,
+				A3693AAC256F36B800CCAEE1 /* landmarkData.json */,
+			);
+			path = OldResources;
+			sourceTree = "<group>";
+		};
+		A3693A9C256F354500CCAEE1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -224,19 +257,6 @@
 		A3693AAB256F369000CCAEE1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A3693AE7256F3F0D00CCAEE1 /* chilkoottrail.jpg */,
-				A3693AEA256F3F0E00CCAEE1 /* chincoteague.jpg */,
-				A3693AEB256F3F0E00CCAEE1 /* hiddenlake.jpg */,
-				A3693AE8256F3F0D00CCAEE1 /* icybay.jpg */,
-				A3693AE3256F3F0D00CCAEE1 /* lakemcdonald.jpg */,
-				A3693AED256F3F0E00CCAEE1 /* rainbowlake.jpg */,
-				A3693AE6256F3F0D00CCAEE1 /* silversalmoncreek.jpg */,
-				A3693AEC256F3F0E00CCAEE1 /* stmarylake.jpg */,
-				A3693AE4256F3F0D00CCAEE1 /* turtlerock.jpg */,
-				A3693AEE256F3F0E00CCAEE1 /* twinlake.jpg */,
-				A3693AE5256F3F0D00CCAEE1 /* umbagog.jpg */,
-				A3693AE9256F3F0D00CCAEE1 /* charleyrivers.jpg */,
-				A3693AAC256F36B800CCAEE1 /* landmarkData.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -302,19 +322,15 @@
 		A3B86087256F22B100194C5A /* tictactoe */ = {
 			isa = PBXGroup;
 			children = (
+				A33FBA6625717B81009204DC /* OldReference */,
 				A39F6C0025704AE1007C5B77 /* Login */,
 				A308BE21257049680077EF9B /* GoogleService-Info.plist */,
-				A3693B48257036F400CCAEE1 /* Profile */,
 				A3B8608C256F22B200194C5A /* Assets.xcassets */,
 				A3B86091256F22B200194C5A /* Info.plist */,
-				A3B8608A256F22B100194C5A /* LandmarkDetail.swift */,
-				A3693AFE256F401F00CCAEE1 /* LandmarkList.swift */,
 				A3693A9C256F354500CCAEE1 /* Models */,
 				A3B8608E256F22B200194C5A /* Preview Content */,
 				A3693AAB256F369000CCAEE1 /* Resources */,
-				A3693AAA256F361400CCAEE1 /* SupportingViews */,
 				A3693ACB256F3AED00CCAEE1 /* tictactoeApp.swift */,
-				A3693B3E25702E2500CCAEE1 /* LandmarkHome.swift */,
 				A37A0605257055C400E40A96 /* ContentView.swift */,
 				A37A062725707CA800E40A96 /* Dashboard.swift */,
 				A33FBA4C2570814D009204DC /* FirebaseDatabaseStore.swift */,
