@@ -42,9 +42,11 @@ PODS:
   - nanopb/decode (2.30906.0)
   - nanopb/encode (2.30906.0)
   - PromisesObjC (1.2.11)
+  - ToastUI (1.3.1)
 
 DEPENDENCIES:
   - Firebase/Auth
+  - ToastUI
 
 SPEC REPOS:
   trunk:
@@ -57,6 +59,7 @@ SPEC REPOS:
     - GTMSessionFetcher
     - nanopb
     - PromisesObjC
+    - ToastUI
 
 SPEC CHECKSUMS:
   Firebase: 78e8dd2e39d653de6270432ad84fe8b59f7bf4e8
@@ -68,7 +71,8 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
   nanopb: 1bf24dd71191072e120b83dd02d08f3da0d65e53
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
+  ToastUI: 3609a98df4295061a168de08472df821499e4ef9
 
-PODFILE CHECKSUM: efbf9190aeed7052c52485e1f426da6c308db960
+PODFILE CHECKSUM: 732b6d95df05f0d5806db2f1ddcc62d1f1f6f83f
 
 COCOAPODS: 1.10.0

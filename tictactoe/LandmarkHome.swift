@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Home: View {
+struct LandmarkHome: View {
     var categories: [String: [Landmark]] {
         Dictionary(
             grouping: landmarkData,
@@ -66,6 +66,6 @@ struct FeaturedLandmarks: View {
 
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
-        Home()
+        LandmarkHome()
     }
 }

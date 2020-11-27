@@ -11,6 +11,7 @@ pod 'Firebase/Auth'
 resources
 
 https://developer.apple.com/tutorials/swiftui
+https://benmcmahen.com/authentication-with-swiftui-and-firebase/
 
 
 a.

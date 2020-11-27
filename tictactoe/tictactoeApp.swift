@@ -17,8 +17,8 @@ struct tictactoeApp: App {
     
     var body: some Scene {
         WindowGroup {
-            Home()
-                .environmentObject(DataStore())
+            ContentView()
+                .environmentObject(SessionStore())
         }
     }
 }

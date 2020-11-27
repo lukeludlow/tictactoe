@@ -2,39 +2,35 @@
 //  ContentView.swift
 //  tictactoe
 //
-//  Created by luke ludlow on 2020-11-25.
+//  Created by luke ludlow on 2020-11-26.
 //
 
 import SwiftUI
 
-struct LandmarkDetail: View {
+struct ContentView: View {
+    
+    @EnvironmentObject var session: SessionStore
+    
+    func getUser() {
+        session.listen()
+    }
+    
     var body: some View {
-        VStack {
-            MapView()
-                .frame(height: 300)
-            CircleImage()
-                .offset(y: -130)
-                .padding(.bottom, -130)
-            VStack(alignment: .leading) {
-                Text("lol xd")
-                    .font(.title)
-                    .foregroundColor(.blue)
-                HStack {
-                    Text("hi")
-                        .font(.subheadline)
-                    Spacer()
-                    Text("park")
-                        .font(.subheadline)
-                }
+        Group {
+            if (session.session != nil) {
+                Text("hello user \(session.session?.displayName ?? "")")
+            } else {
+                let _ = print("content view session user: \(session.session)")
+                LoginView()
+                    .environmentObject(self.session)
             }
-            .padding()
-            Spacer()
-        }
+        }.onAppear(perform: getUser)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        LandmarkDetail()
+        ContentView()
+            .environmentObject(SessionStore())
     }
 }
