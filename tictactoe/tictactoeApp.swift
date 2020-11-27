@@ -19,6 +19,7 @@ struct tictactoeApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(SessionStore())
+                .environmentObject(FirebaseDatabaseStore())
         }
     }
 }

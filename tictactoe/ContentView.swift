@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @EnvironmentObject var session: SessionStore
+    @EnvironmentObject var database: FirebaseDatabaseStore
     
     func getUser() {
         session.listen()
@@ -18,11 +19,14 @@ struct ContentView: View {
     var body: some View {
         Group {
             if (session.session != nil) {
-                Text("hello user \(session.session?.displayName ?? "")")
+                Dashboard()
+                    .environmentObject(session)
+                    .environmentObject(database)
             } else {
                 let _ = print("content view session user: \(session.session)")
                 LoginView()
                     .environmentObject(self.session)
+                    .environmentObject(self.database)
             }
         }.onAppear(perform: getUser)
     }
@@ -32,5 +36,6 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
             .environmentObject(SessionStore())
+            .environmentObject(FirebaseDatabaseStore())
     }
 }

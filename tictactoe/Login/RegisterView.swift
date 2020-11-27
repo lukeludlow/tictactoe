@@ -12,6 +12,7 @@ struct RegisterView: View {
     
 //    @State private var navigationAction: Int? = 0
     @EnvironmentObject var session: SessionStore
+    @EnvironmentObject var database: FirebaseDatabaseStore
     @State var email: String = ""
     @State var password: String = ""
     @State var displayName: String = ""
@@ -44,6 +45,8 @@ struct RegisterView: View {
                         print("profile display name updated successfully")
                     }
                 }
+                let player = Player(uid: session.session?.uid ?? "", username: displayName, wins: 0, losses: 0)
+                self.database.addPlayer(player: player)
                 self.email = ""
                 self.password = ""
                 self.displayName = ""

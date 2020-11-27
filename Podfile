@@ -2,6 +2,7 @@
 # platform :ios, '9.0'
 
 pod 'Firebase/Auth'
+pod 'Firebase/Database'
 pod 'ToastUI'
 
 target 'tictactoe' do

@@ -11,16 +11,50 @@ import ToastUI
 struct Dashboard: View {
    
     @EnvironmentObject var session: SessionStore
-    
-    var body: some View {
-        Button("logout") {
-            if session.signOut() {
-                print("signed out. going back to login screen.")
-            } else {
-                print("unable to sign out. please try again.")
+    @EnvironmentObject var database: FirebaseDatabaseStore
+
+    func incrementPlayerWins() {
+        for (player) in self.database.players {
+            if player.uid == self.session.session?.uid {
+                player.wins += 1
+                player.ref?.updateChildValues(["wins": player.wins])
             }
         }
-        Text("wins:")
+    }
+
+    var body: some View {
+        VStack {
+            ForEach(self.database.players) { player in
+                if player.uid == self.session.session?.uid {
+                    Text("\(player.username)")
+                    Text("\(player.wins)")
+                    Text("\(player.losses)")
+                }
+            }
+            List {
+                ForEach(database.games) { game in
+                    GamePreviewRow(game: game)
+                }
+            }
+            Button("win") {
+                self.incrementPlayerWins()
+//                ForEach(database.players) { player in
+//                    if player.uid == session.session?.uid {
+//                        player.ref.updateChildValues(["wins": player.wins])
+//                    }
+//                }
+//                self.player?.wins += 1
+//                database.players[playerUid]?.ref?.updateChildValues(["wins": self.player?.wins as Any])
+//                database.updatePlayer(player: self.player!)
+            }
+            Button("lose") {
+//                self.player?.losses += 1
+//                database.updatePlayer(player: self.player!)
+            }
+        }.onAppear(perform: self.database.getPlayers)
+        Button("logout") {
+            self.session.signOut()
+        }
     }
 }
 
@@ -28,5 +62,6 @@ struct Dashboard_Previews: PreviewProvider {
     static var previews: some View {
         Dashboard()
             .environmentObject(SessionStore())
+            .environmentObject(FirebaseDatabaseStore())
     }
 }

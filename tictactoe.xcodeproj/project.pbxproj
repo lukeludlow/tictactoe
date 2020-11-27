@@ -14,10 +14,14 @@
 		A308BE22257049680077EF9B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A308BE21257049680077EF9B /* GoogleService-Info.plist */; };
 		A308BE23257049680077EF9B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A308BE21257049680077EF9B /* GoogleService-Info.plist */; };
 		A308BE24257049680077EF9B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A308BE21257049680077EF9B /* GoogleService-Info.plist */; };
+		A33FBA4D2570814D009204DC /* FirebaseDatabaseStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33FBA4C2570814D009204DC /* FirebaseDatabaseStore.swift */; };
+		A33FBA55257081BB009204DC /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33FBA54257081BB009204DC /* Game.swift */; };
+		A33FBA5A25708C77009204DC /* GamePreviewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33FBA5925708C77009204DC /* GamePreviewRow.swift */; };
+		A33FBA5F2570920E009204DC /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33FBA5E2570920E009204DC /* Player.swift */; };
 		A3693A93256F2E7300CCAEE1 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3693A92256F2E7300CCAEE1 /* CircleImage.swift */; };
 		A3693A98256F2FA500CCAEE1 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3693A97256F2FA500CCAEE1 /* MapView.swift */; };
 		A3693A9E256F355200CCAEE1 /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3693A9D256F355200CCAEE1 /* Landmark.swift */; };
-		A3693AA6256F359400CCAEE1 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3693AA5256F359400CCAEE1 /* Data.swift */; };
+		A3693AA6256F359400CCAEE1 /* LandmarkDataData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3693AA5256F359400CCAEE1 /* LandmarkDataData.swift */; };
 		A3693AAD256F36B800CCAEE1 /* landmarkData.json in Resources */ = {isa = PBXBuildFile; fileRef = A3693AAC256F36B800CCAEE1 /* landmarkData.json */; };
 		A3693ACC256F3AED00CCAEE1 /* tictactoeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3693ACB256F3AED00CCAEE1 /* tictactoeApp.swift */; };
 		A3693AD7256F3C1D00CCAEE1 /* LandmarkRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3693AD6256F3C1D00CCAEE1 /* LandmarkRow.swift */; };
@@ -88,10 +92,14 @@
 		A308BE1725703ADB0077EF9B /* HikeBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikeBadge.swift; sourceTree = "<group>"; };
 		A308BE1C25703C720077EF9B /* ProfileEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditor.swift; sourceTree = "<group>"; };
 		A308BE21257049680077EF9B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A33FBA4C2570814D009204DC /* FirebaseDatabaseStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDatabaseStore.swift; sourceTree = "<group>"; };
+		A33FBA54257081BB009204DC /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		A33FBA5925708C77009204DC /* GamePreviewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePreviewRow.swift; sourceTree = "<group>"; };
+		A33FBA5E2570920E009204DC /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		A3693A92256F2E7300CCAEE1 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		A3693A97256F2FA500CCAEE1 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		A3693A9D256F355200CCAEE1 /* Landmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmark.swift; sourceTree = "<group>"; };
-		A3693AA5256F359400CCAEE1 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		A3693AA5256F359400CCAEE1 /* LandmarkDataData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkDataData.swift; sourceTree = "<group>"; };
 		A3693AAC256F36B800CCAEE1 /* landmarkData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = landmarkData.json; sourceTree = "<group>"; };
 		A3693ACB256F3AED00CCAEE1 /* tictactoeApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tictactoeApp.swift; sourceTree = "<group>"; };
 		A3693AD6256F3C1D00CCAEE1 /* LandmarkRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkRow.swift; sourceTree = "<group>"; };
@@ -195,7 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				A3693A9D256F355200CCAEE1 /* Landmark.swift */,
-				A3693AA5256F359400CCAEE1 /* Data.swift */,
+				A3693AA5256F359400CCAEE1 /* LandmarkDataData.swift */,
 				A3693B09256F4FC600CCAEE1 /* DataStore.swift */,
 			);
 			path = Models;
@@ -309,6 +317,10 @@
 				A3693B3E25702E2500CCAEE1 /* LandmarkHome.swift */,
 				A37A0605257055C400E40A96 /* ContentView.swift */,
 				A37A062725707CA800E40A96 /* Dashboard.swift */,
+				A33FBA4C2570814D009204DC /* FirebaseDatabaseStore.swift */,
+				A33FBA54257081BB009204DC /* Game.swift */,
+				A33FBA5925708C77009204DC /* GamePreviewRow.swift */,
+				A33FBA5E2570920E009204DC /* Player.swift */,
 			);
 			path = tictactoe;
 			sourceTree = "<group>";
@@ -597,13 +609,15 @@
 				A37A0606257055C400E40A96 /* ContentView.swift in Sources */,
 				A3693B12256F52C100CCAEE1 /* Badge.swift in Sources */,
 				A3693B4425702F5000CCAEE1 /* CategoryRow.swift in Sources */,
-				A3693AA6256F359400CCAEE1 /* Data.swift in Sources */,
+				A3693AA6256F359400CCAEE1 /* LandmarkDataData.swift in Sources */,
 				A3693A98256F2FA500CCAEE1 /* MapView.swift in Sources */,
+				A33FBA5A25708C77009204DC /* GamePreviewRow.swift in Sources */,
 				A3693B1F256F532F00CCAEE1 /* HexagonParameters.swift in Sources */,
 				A3693B522570375000CCAEE1 /* Profile.swift in Sources */,
 				A3693B2E256F600600CCAEE1 /* RotatedBadgeSymbol.swift in Sources */,
 				A3693B29256F581600CCAEE1 /* BadgeSymbol.swift in Sources */,
 				A308BE1825703ADB0077EF9B /* HikeBadge.swift in Sources */,
+				A33FBA5F2570920E009204DC /* Player.swift in Sources */,
 				A308BE1D25703C720077EF9B /* ProfileEditor.swift in Sources */,
 				A37A060B2570574B00E40A96 /* LoginView.swift in Sources */,
 				A3693B3F25702E2500CCAEE1 /* LandmarkHome.swift in Sources */,
@@ -611,9 +625,11 @@
 				A3693B0A256F4FC600CCAEE1 /* DataStore.swift in Sources */,
 				A3693AFF256F401F00CCAEE1 /* LandmarkList.swift in Sources */,
 				A3693B24256F578D00CCAEE1 /* BadgeBackground.swift in Sources */,
+				A33FBA4D2570814D009204DC /* FirebaseDatabaseStore.swift in Sources */,
 				A3693A93256F2E7300CCAEE1 /* CircleImage.swift in Sources */,
 				A3693A9E256F355200CCAEE1 /* Landmark.swift in Sources */,
 				A3693AD7256F3C1D00CCAEE1 /* LandmarkRow.swift in Sources */,
+				A33FBA55257081BB009204DC /* Game.swift in Sources */,
 				A37A062825707CA800E40A96 /* Dashboard.swift in Sources */,
 				A308BE13257038790077EF9B /* ProfileSummary.swift in Sources */,
 				A37A05F025704D2A00E40A96 /* SessionStore.swift in Sources */,

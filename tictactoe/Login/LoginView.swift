@@ -20,7 +20,8 @@ struct LoginView: View {
     @State var showRegisterModal = false
     
     @EnvironmentObject var session: SessionStore
-    
+    @EnvironmentObject var database: FirebaseDatabaseStore
+
     func login() {
         loading = true
         error = false
@@ -63,6 +64,7 @@ struct LoginView: View {
             .sheet(isPresented: $showRegisterModal) {
                 RegisterView(showModal: $showRegisterModal)
                     .environmentObject(self.session)
+                    .environmentObject(self.database)
             }
         }
     }
