@@ -53,7 +53,12 @@ struct Dashboard: View {
             }
         }.onAppear(perform: self.database.getPlayers)
         Button("logout") {
-            self.session.signOut()
+            let success = self.session.signOut()
+            if success {
+                print("signed out successfully")
+            } else {
+                print("failed to sign out. please try again.")
+            }
         }
     }
 }

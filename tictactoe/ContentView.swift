@@ -23,7 +23,7 @@ struct ContentView: View {
                     .environmentObject(session)
                     .environmentObject(database)
             } else {
-                let _ = print("content view session user: \(session.session)")
+//                let _ = print("content view session user: \(session.session)")
                 LoginView()
                     .environmentObject(self.session)
                     .environmentObject(self.database)
