@@ -1,6 +1,0 @@
-module ToastUI {
-  umbrella header "ToastUI-library-umbrella.h"
-
-  export *
-  module * { export * }
-}
