@@ -74,6 +74,8 @@
 		A31D83C525719CD900AFD9BB /* GameViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewViewModel.swift; sourceTree = "<group>"; };
 		A31D83C825719D4400AFD9BB /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		A31D83CB25719D6D00AFD9BB /* XO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XO.swift; sourceTree = "<group>"; };
+		A31D840B2573150F00AFD9BB /* SimulatorsList.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = SimulatorsList.txt; sourceTree = "<group>"; };
+		A31D840C2573156F00AFD9BB /* MultipleSimulatorsStartup.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = MultipleSimulatorsStartup.sh; sourceTree = "<group>"; };
 		A33FBA4C2570814D009204DC /* FirebaseDatabaseStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDatabaseStore.swift; sourceTree = "<group>"; };
 		A33FBA54257081BB009204DC /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		A33FBA5925708C77009204DC /* GamePreviewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePreviewRow.swift; sourceTree = "<group>"; };
@@ -254,6 +256,8 @@
 		A3B8607C256F22B100194C5A = {
 			isa = PBXGroup;
 			children = (
+				A31D840C2573156F00AFD9BB /* MultipleSimulatorsStartup.sh */,
+				A31D840B2573150F00AFD9BB /* SimulatorsList.txt */,
 				A3B860B6256F232500194C5A /* readme.md */,
 				A3B86087256F22B100194C5A /* tictactoe */,
 				A3B86086256F22B100194C5A /* Products */,
@@ -316,6 +320,7 @@
 				A3B86082256F22B100194C5A /* Frameworks */,
 				A3B86083256F22B100194C5A /* Resources */,
 				33BAF3A5E0FE5238E1E67F18 /* [CP] Embed Pods Frameworks */,
+				A31D840D2573164800AFD9BB /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -401,6 +406,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tictactoe/Pods-tictactoe-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		A31D840D2573164800AFD9BB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "custom_sim=`xcrun simctl list | grep 'Custom Simulators' | awk -F'[()]' '{print $2}'`\nif [ ! -z \"${custom_sim}\" ] && [ \"${TARGET_DEVICE_IDENTIFIER}\" = \"${custom_sim}\" ]; then\n/bin/sh multipleSimulatorsStartup.sh\nfi\n";
 		};
 		A3B739125DDFA6E668213170 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

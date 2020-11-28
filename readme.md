@@ -1,4 +1,4 @@
-#  <#Title#>
+#  tictactoe 
 
 this app was developed for iOS 14.2 using Xcode 12.2 
 
@@ -13,6 +13,7 @@ resources
 https://developer.apple.com/tutorials/swiftui
 https://benmcmahen.com/authentication-with-swiftui-and-firebase/
 https://github.com/marty-suzuki/TicTacToe-SwiftUI/blob/master/
+https://medium.com/@guilhermegirotto/launch-multiple-simulators-in-a-single-build-xcode-9-xcode-10-5c8d13f01376
 
 
 a.

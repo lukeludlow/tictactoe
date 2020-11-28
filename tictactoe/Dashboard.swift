@@ -38,7 +38,8 @@ struct Dashboard: View {
         NavigationView {
             ZStack {
                 NavigationLink(
-                    destination: GameView(viewModel: self.createNewGameModel()),
+                    destination: GameView(playerOne: "\(self.session.session?.displayName ?? "username")", playerTwo: "CPU"),
+//                    destination: GameView(viewModel: self.createNewGameModel()),
 //                    destination: GameView(viewModel: GameViewViewModel(
 //                                                playerOne: "\(self.session.session?.displayName ?? "username")",
 //                                                playerTwo: "CPU",
