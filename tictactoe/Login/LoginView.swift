@@ -17,6 +17,8 @@ struct LoginView: View {
     @State var error: Bool = false
     @State var errorText: String = ""
     
+    @State var success: Bool = false
+    
     @State var showRegisterModal = false
     
     @EnvironmentObject var session: SessionStore
@@ -25,15 +27,17 @@ struct LoginView: View {
     func login() {
         loading = true
         error = false
+        success = false
         session.signIn(email: email, password: password) { (result, error) in
             self.loading = false
             if error != nil {
-                self.error = true
                 print("\(String(describing: error))")
                 self.errorText = String(describing: error)
+                self.error = true
             } else {
                 self.email = ""
                 self.password = ""
+                self.success = true
             }
         }
     }
@@ -41,22 +45,14 @@ struct LoginView: View {
     var body: some View {
         NavigationView {
             VStack {
-//                NavigationLink(destination: RegisterView(), tag: 1, selection: $navigationAction) {
-//                    EmptyView()
-//                }
                 TextField("email address", text: $email)
                     .padding()
                 SecureField("password", text: $password)
                     .padding()
                 Button("login") {
                     login()
-                }.padding()
-//                Button(action: { self.navigationAction = 1 }) {
-//                    Text("register")
-//                }.padding()
-//                Button("register") {
-//                    self.navigationAction = 1
-//                }.padding()
+                }
+                .padding()
                 Button("register") {
                     self.showRegisterModal.toggle()
                 }

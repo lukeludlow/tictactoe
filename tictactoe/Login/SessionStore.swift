@@ -10,7 +10,7 @@ import SwiftUI
 import Combine
 import Firebase
 
-class SessionStore : ObservableObject {
+class SessionStore: ObservableObject {
     
 //    var didChange = PassthroughSubject<SessionStore, Never>()
     @Published var session: User?

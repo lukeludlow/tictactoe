@@ -4,6 +4,8 @@ platform :ios, '14.0'
 pod 'Firebase/Auth'
 pod 'Firebase/Database'
 pod 'ToastUI'
+pod 'SwiftLint'
+pod 'Toast-Swift'
 
 target 'tictactoe' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -20,5 +22,4 @@ end
 #    end
 #  end
 #end
-
 

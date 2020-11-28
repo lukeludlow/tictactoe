@@ -16,6 +16,14 @@ class Game: Identifiable {
     var playerTwo: String
     var isComplete: Bool
     
+//    let numRows = 3
+//    let numCols = 3
+//    var cells: [[XO]] = [
+//        [XO.empty, XO.empty, XO.empty],
+//        [XO.empty, XO.empty, XO.empty],
+//        [XO.empty, XO.empty, XO.empty]
+//    ]
+
     init(key: String, playerOne: String, playerTwo: String, isComplete: Bool) {
         self.ref = nil
         self.id = key
@@ -41,3 +49,5 @@ class Game: Identifiable {
         self.isComplete = isComplete
     }
 }
+
+
