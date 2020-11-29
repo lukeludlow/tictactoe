@@ -27,18 +27,20 @@ struct Dashboard: View {
     
     func createNewGameModel() -> GameViewViewModel {
         return GameViewViewModel(
-            playerOne: "\(self.session.session?.displayName ?? "username")",
+            playerOne: "\(self.session.session?.displayName ?? "player one")",
             playerTwo: "CPU",
             session: self.session,
             database: self.database
         )
     }
     
+ 
+    
     var body: some View {
         NavigationView {
-            ZStack {
+            ZStack(alignment: .leading) {
                 NavigationLink(
-                    destination: GameView(playerOne: "\(self.session.session?.displayName ?? "username")", playerTwo: "CPU"),
+                    destination: GameView(playerOne: "\(self.session.session?.displayName ?? "player one")", playerTwo: "CPU"),
 //                    destination: GameView(viewModel: self.createNewGameModel()),
 //                    destination: GameView(viewModel: GameViewViewModel(
 //                                                playerOne: "\(self.session.session?.displayName ?? "username")",
@@ -49,10 +51,18 @@ struct Dashboard: View {
                     selection: $navigationAction) {
                     EmptyView()
                 }
-                VStack {
+                NavigationLink(
+                    destination: MultiPlayerGameView(game: Game())
+                                    .environmentObject(self.session)
+                                    .environmentObject(self.database),
+                    tag: 2,
+                    selection: $navigationAction) {
+                    EmptyView()
+                }
+                VStack(alignment: .leading) {
                     Text("player stats")
                         .font(.title)
-                    ScrollView(.vertical, showsIndicators: false) {
+                    VStack(alignment: .leading) {
                         ForEach(self.database.players) { player in
                             if player.uid == self.session.session?.uid {
                                 Text("\(player.username)")
@@ -66,18 +76,18 @@ struct Dashboard: View {
                         .font(.title)
                     ScrollView(.vertical, showsIndicators: false) {
                         ForEach(database.games) { game in
-                            GamePreviewRow(game: game)
+                            NavigationLink(destination: MultiPlayerGameView(game: game)) {
+                                GamePreviewRow(game: game)
+                            }
                         }
                     }
                     .frame(height: 300)
-                    Button("win") {
-                        self.incrementPlayerWins()
-                    }
-                    Button("lose") {
-                        print("lose")
-                    }
-                }.onAppear(perform: self.database.getPlayers)
-                VStack {
+                }.onAppear() {
+                    self.database.observePlayers()
+                    self.database.observeGames()
+                }
+                .padding()
+                VStack(alignment: .leading) {
                     Spacer()
                     HStack {
                         Spacer()
@@ -93,6 +103,7 @@ struct Dashboard: View {
                                 },
                                 .default(Text("two player")) {
                                     print("start two player game")
+                                    self.navigationAction = 2
                                 },
                                 .cancel()
                             ])
@@ -107,27 +118,23 @@ struct Dashboard: View {
                         .padding()
                     }
                 }
-
             }
-        }
-        Button("logout") {
-            print("logout")
-//            let success = self.session.signOut()
-//            if success {
-//                print("signed out successfully")
-//            } else {
-//                print("failed to sign out. please try again.")
-//            }
+            .navigationBarTitle(Text("dashboard"))
+            .navigationBarItems(trailing: Button("logout") {
+                print("logout")
+                self.session.signOut()
+            })
+            
         }
     }
 }
 
 struct Dashboard_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
+//        NavigationView {
             Dashboard()
                 .environmentObject(SessionStore())
                 .environmentObject(FirebaseDatabaseStore())
-        }
+//        }
     }
 }

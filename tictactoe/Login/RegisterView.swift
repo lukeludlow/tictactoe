@@ -51,12 +51,13 @@ struct RegisterView: View {
                 self.password = ""
                 self.displayName = ""
                 self.success = true
+                self.showModal = false
             }
         }
     }
 
     var body: some View {
-        NavigationView {
+//        NavigationView {
             VStack {
                 Button("cancel") {
                     self.showModal = false
@@ -97,7 +98,7 @@ struct RegisterView: View {
                 }
                 .padding()
             }
-        }
+//        }
     }
 }
 

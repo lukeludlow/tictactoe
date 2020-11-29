@@ -11,6 +11,7 @@
 		A308BE1825703ADB0077EF9B /* HikeBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A308BE1725703ADB0077EF9B /* HikeBadge.swift */; };
 		A308BE1D25703C720077EF9B /* ProfileEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A308BE1C25703C720077EF9B /* ProfileEditor.swift */; };
 		A308BE22257049680077EF9B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A308BE21257049680077EF9B /* GoogleService-Info.plist */; };
+		A3143AD62573199000EFE075 /* MultiPlayerGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3143AD52573199000EFE075 /* MultiPlayerGameView.swift */; };
 		A31D83C3257196D500AFD9BB /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31D83C2257196D500AFD9BB /* GameView.swift */; };
 		A31D83C625719CD900AFD9BB /* GameViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31D83C525719CD900AFD9BB /* GameViewViewModel.swift */; };
 		A31D83C925719D4400AFD9BB /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31D83C825719D4400AFD9BB /* Cell.swift */; };
@@ -70,6 +71,7 @@
 		A308BE1725703ADB0077EF9B /* HikeBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikeBadge.swift; sourceTree = "<group>"; };
 		A308BE1C25703C720077EF9B /* ProfileEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditor.swift; sourceTree = "<group>"; };
 		A308BE21257049680077EF9B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A3143AD52573199000EFE075 /* MultiPlayerGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiPlayerGameView.swift; sourceTree = "<group>"; };
 		A31D83C2257196D500AFD9BB /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		A31D83C525719CD900AFD9BB /* GameViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewViewModel.swift; sourceTree = "<group>"; };
 		A31D83C825719D4400AFD9BB /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
@@ -154,6 +156,21 @@
 				2B65C11A28B460F2292CD58A /* Pods-tictactoe.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		A3143AD42573195C00EFE075 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				A33FBA54257081BB009204DC /* Game.swift */,
+				A33FBA5925708C77009204DC /* GamePreviewRow.swift */,
+				A33FBA5E2570920E009204DC /* Player.swift */,
+				A31D83C2257196D500AFD9BB /* GameView.swift */,
+				A31D83C525719CD900AFD9BB /* GameViewViewModel.swift */,
+				A31D83C825719D4400AFD9BB /* Cell.swift */,
+				A31D83CB25719D6D00AFD9BB /* XO.swift */,
+				A3143AD52573199000EFE075 /* MultiPlayerGameView.swift */,
+			);
+			path = Game;
 			sourceTree = "<group>";
 		};
 		A33FBA6625717B81009204DC /* OldReference */ = {
@@ -277,6 +294,7 @@
 		A3B86087256F22B100194C5A /* tictactoe */ = {
 			isa = PBXGroup;
 			children = (
+				A3143AD42573195C00EFE075 /* Game */,
 				A33FBA6625717B81009204DC /* OldReference */,
 				A39F6C0025704AE1007C5B77 /* Login */,
 				A308BE21257049680077EF9B /* GoogleService-Info.plist */,
@@ -289,13 +307,6 @@
 				A37A0605257055C400E40A96 /* ContentView.swift */,
 				A37A062725707CA800E40A96 /* Dashboard.swift */,
 				A33FBA4C2570814D009204DC /* FirebaseDatabaseStore.swift */,
-				A33FBA54257081BB009204DC /* Game.swift */,
-				A33FBA5925708C77009204DC /* GamePreviewRow.swift */,
-				A33FBA5E2570920E009204DC /* Player.swift */,
-				A31D83C2257196D500AFD9BB /* GameView.swift */,
-				A31D83C525719CD900AFD9BB /* GameViewViewModel.swift */,
-				A31D83C825719D4400AFD9BB /* Cell.swift */,
-				A31D83CB25719D6D00AFD9BB /* XO.swift */,
 			);
 			path = tictactoe;
 			sourceTree = "<group>";
@@ -486,6 +497,7 @@
 				A37A05F025704D2A00E40A96 /* SessionStore.swift in Sources */,
 				A3693ACC256F3AED00CCAEE1 /* tictactoeApp.swift in Sources */,
 				A31D83C625719CD900AFD9BB /* GameViewViewModel.swift in Sources */,
+				A3143AD62573199000EFE075 /* MultiPlayerGameView.swift in Sources */,
 				A31D83C3257196D500AFD9BB /* GameView.swift in Sources */,
 				A37A05F52570531500E40A96 /* User.swift in Sources */,
 			);

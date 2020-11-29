@@ -43,7 +43,7 @@ struct LoginView: View {
     }
     
     var body: some View {
-        NavigationView {
+//        NavigationView {
             VStack {
                 TextField("email address", text: $email)
                     .padding()
@@ -62,7 +62,7 @@ struct LoginView: View {
                     .environmentObject(self.session)
                     .environmentObject(self.database)
             }
-        }
+//        }
     }
 }
 
