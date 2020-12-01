@@ -96,6 +96,90 @@ class Game: Identifiable, ObservableObject {
             "cells": cells.map({ $0.toAnyObject() })
         ]
     }
+    
+    func anyEmptyCells() -> Bool {
+        let emptyCells = self.cells.filter { $0.value == XO.empty }
+        return emptyCells.count > 0
+    }
+    
+    func toggleCell(linkedToCellAt: Int) {
+        let cell = cells[linkedToCellAt]
+        print("toggleCell. cell.row=\(cell.row), cell.col=\(cell.col), currentPlayerTurn=\(currentPlayerTurn)")
+        if currentPlayerTurn == playerOne {
+            self.cells[linkedToCellAt].value = XO.x
+            currentPlayerTurn = playerTwo
+        } else {
+            self.cells[linkedToCellAt].value = XO.o
+            currentPlayerTurn = playerOne
+        }
+        tick()
+    }
+    
+    func tick() {
+        self.winner = detectWinner()
+        if self.winner != "" {
+            print("game over, \(self.winner) won")
+//            if winner == playerOne {
+//                incrementPlayerWins()
+//            } else if winner == playerTwo {
+                // decrementPlayerWins()
+//            }
+            self.isComplete = true
+            return
+        }
+        if !anyEmptyCells() {
+            print("game over, no empty cells")
+            if self.winner == "" {
+                self.winner = "nobody"
+            }
+            self.isComplete = true
+            return
+        }
+//        if currentPlayerTurn == "CPU" && !isComplete {
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 0.25, execute: {
+//                self.cpuMakeMove()
+//            })
+//        }
+    }
+    
+    func detectWinner() -> String {
+        // check for horizontal three in a row
+        if cells[0...2].allSatisfy({ $0.value == XO.x }) {
+            return playerOne
+        }
+        if cells[0...2].allSatisfy({ $0.value == XO.o }) {
+            return playerTwo
+        }
+        // check for vertical three in a row
+        if [cells[0], cells[3], cells[6]].allSatisfy({ $0.value == XO.x }) {
+            return playerOne
+        } else if [cells[0], cells[3], cells[6]].allSatisfy({ $0.value == XO.o }) {
+            return playerTwo
+        }
+        if [cells[1], cells[4], cells[7]].allSatisfy({ $0.value == XO.x }) {
+            return playerOne
+        } else if [cells[1], cells[4], cells[7]].allSatisfy({ $0.value == XO.o }) {
+            return playerTwo
+        }
+        if [cells[2], cells[5], cells[8]].allSatisfy({ $0.value == XO.x }) {
+            return playerOne
+        } else if [cells[2], cells[5], cells[8]].allSatisfy({ $0.value == XO.o }) {
+            return playerTwo
+        }
+        // check for diagonal three in a row
+        let diagonalPermutations: [[Int]] = [
+            [0, 4, 8],
+            [2, 4, 6]
+        ]
+        for diagonal in diagonalPermutations {
+            if diagonal.allSatisfy({ cells[$0].value == XO.x }) {
+                return playerOne
+            } else if diagonal.allSatisfy({ cells[$0].value == XO.o }) {
+                return playerTwo
+            }
+        }
+        return ""
+    }
 }
 
 

@@ -12,12 +12,10 @@ struct MultiPlayerGameView: View {
     
     @EnvironmentObject var session: SessionStore
     @EnvironmentObject var database: FirebaseDatabaseStore
-    
-    @State var observedGameId: String = ""
-    
     @ObservedObject var game: Game
-    
+    @State var observedGameId: String = ""
     var deallocPrinter: DeallocPrinter
+
 
     init(game: Game) {
         print("init MultiPlayerGameView. game.uid=\(game.uid), " +
@@ -26,16 +24,11 @@ struct MultiPlayerGameView: View {
         self.game = game
         self.deallocPrinter = DeallocPrinter(uid: game.uid)
     }
-    
-    func createNewMultiPlayerGame() -> Game {
-        return Game(playerOne: "\(self.session.session?.displayName ?? "player one")", playerTwo: "")
-    }
-    
+
     func observeGame() {
         print("observeGame \(self.observedGameId)")
         let postRef = self.database.ref.child("games").child("\(self.observedGameId)")
         postRef.observe(DataEventType.value) { (snapshot) in
-//            print("multi player game observed: \(snapshot.value as Any)")
             if let observedGame = Game(snapshot: snapshot) {
                 self.game.copyFrom(otherGame: observedGame)
                 print("updated observed game state")
@@ -45,13 +38,15 @@ struct MultiPlayerGameView: View {
     
     func createButton(linkedToCellAt: Int) -> some View {
         return Button(action: {
-            print("clicked cell at \(linkedToCellAt) (inside game \(self.game.uid)")
-            if self.session.session!.displayName == game.playerOne {
-                game.cells[linkedToCellAt].value = XO.x
-            } else if self.session.session!.displayName == game.playerTwo {
-                game.cells[linkedToCellAt].value = XO.o
-            }
-            game.ref?.updateChildValues(["cells": game.cells.map({ $0.toAnyObject() })])
+//            print("clicked cell at \(linkedToCellAt) (inside game \(self.game.uid)")
+            game.toggleCell(linkedToCellAt: linkedToCellAt)
+//            if self.session.session!.displayName == game.playerOne {
+//                game.cells[linkedToCellAt].value = XO.x
+//            } else if self.session.session!.displayName == game.playerTwo {
+//                game.cells[linkedToCellAt].value = XO.o
+//            }
+            game.ref?.updateChildValues(game.toAnyObject() as! [AnyHashable : Any])
+//            game.ref?.updateChildValues(["cells": game.cells.map({ $0.toAnyObject() })])
         }) {
             Text("\(game.cells[linkedToCellAt].value.rawValue)")
                 .font(.largeTitle)
@@ -63,24 +58,29 @@ struct MultiPlayerGameView: View {
    
     var body: some View {
         VStack {
-            Text("multiplayer game view")
             Text("\(self.game.playerOne) vs \(self.game.playerTwo)")
+                .padding(.bottom, 20)
+            Text("\(game.currentPlayerTurn)'s turn")
+                .padding(.bottom, 10)
             VStack {
-                HStack {
+                HStack(alignment: .center, spacing: 0) {
                     createButton(linkedToCellAt: 0)
                     createButton(linkedToCellAt: 1)
                     createButton(linkedToCellAt: 2)
                 }
-                HStack {
+                .frame(width: 300, height: 100)
+                HStack(alignment: .center, spacing: 0) {
                     createButton(linkedToCellAt: 3)
                     createButton(linkedToCellAt: 4)
                     createButton(linkedToCellAt: 5)
                 }
-                HStack {
+                .frame(width: 300, height: 100)
+                HStack(alignment: .center, spacing: 0) {
                     createButton(linkedToCellAt: 6)
                     createButton(linkedToCellAt: 7)
                     createButton(linkedToCellAt: 8)
                 }
+                .frame(width: 300, height: 100)
             }
         }.onAppear() {
             let currentUserName = self.session.session?.displayName ?? "unknown"
@@ -93,12 +93,9 @@ struct MultiPlayerGameView: View {
                 print("creating new game")
                 self.game.playerOne = self.session.session?.displayName ?? "player one"
                 self.game.playerTwo = ""
-//                let newGame = self.createNewMultiPlayerGame()
                 self.observedGameId = self.game.uid
                 let gameRef = self.database.ref.child("games").child("\(self.observedGameId)")
                 self.game.ref = gameRef
-//                newGame.ref = gameRef
-//                self.game.copyFrom(otherGame: newGame)
                 self.database.addGame(game: self.game)
             }
             else if self.game.playerOne != currentUserName && self.game.playerTwo == "" {
