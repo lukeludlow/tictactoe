@@ -133,8 +133,4 @@ class GameViewViewModel: ObservableObject {
         let emptyCells = self.cells.flatMap({ $0 }).filter { $0.value == XO.empty }
         return emptyCells.count > 0
     }
-    
-    deinit {
-        print("deinit")
-    }
 }

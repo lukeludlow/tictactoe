@@ -26,12 +26,14 @@ struct GamePreviewRow: View {
             Text("\(game.playerOne) vs \(game.playerTwo == "" ? "_____" : game.playerTwo)")
                 .font(.body)
                 .lineLimit(1)
+                .frame(width: 300, alignment: .leading)
             Text("(\(getGameStatusString()))")
                 .font(.body)
                 .fontWeight(.thin)
                 .lineLimit(1)
+                .frame(width: 300, alignment: .leading)
         }
-        .padding(.bottom, 20)
+        .frame(width: 300, height: 69)
     }
 }
 

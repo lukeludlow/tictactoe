@@ -56,6 +56,7 @@
 		A37A060B2570574B00E40A96 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37A060A2570574B00E40A96 /* LoginView.swift */; };
 		A37A061025705A9800E40A96 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37A060F25705A9800E40A96 /* RegisterView.swift */; };
 		A37A062825707CA800E40A96 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37A062725707CA800E40A96 /* Dashboard.swift */; };
+		A37ED2B92575B0D000B73DC4 /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37ED2B82575B0D000B73DC4 /* LazyView.swift */; };
 		A3B8608B256F22B100194C5A /* LandmarkDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B8608A256F22B100194C5A /* LandmarkDetail.swift */; };
 		A3B8608D256F22B200194C5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3B8608C256F22B200194C5A /* Assets.xcassets */; };
 		A3B86090256F22B200194C5A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3B8608F256F22B200194C5A /* Preview Assets.xcassets */; };
@@ -118,6 +119,7 @@
 		A37A060A2570574B00E40A96 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A37A060F25705A9800E40A96 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		A37A062725707CA800E40A96 /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
+		A37ED2B82575B0D000B73DC4 /* LazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyView.swift; sourceTree = "<group>"; };
 		A3B86085256F22B100194C5A /* tictactoe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tictactoe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3B8608A256F22B100194C5A /* LandmarkDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkDetail.swift; sourceTree = "<group>"; };
 		A3B8608C256F22B200194C5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 				A37A0605257055C400E40A96 /* ContentView.swift */,
 				A37A062725707CA800E40A96 /* Dashboard.swift */,
 				A33FBA4C2570814D009204DC /* FirebaseDatabaseStore.swift */,
+				A37ED2B82575B0D000B73DC4 /* LazyView.swift */,
 			);
 			path = tictactoe;
 			sourceTree = "<group>";
@@ -471,6 +474,7 @@
 				A3693B4425702F5000CCAEE1 /* CategoryRow.swift in Sources */,
 				A31D83C925719D4400AFD9BB /* Cell.swift in Sources */,
 				A3693AA6256F359400CCAEE1 /* LandmarkDataData.swift in Sources */,
+				A37ED2B92575B0D000B73DC4 /* LazyView.swift in Sources */,
 				A3693A98256F2FA500CCAEE1 /* MapView.swift in Sources */,
 				A31D83CC25719D6D00AFD9BB /* XO.swift in Sources */,
 				A33FBA5A25708C77009204DC /* GamePreviewRow.swift in Sources */,

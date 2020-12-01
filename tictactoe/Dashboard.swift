@@ -10,11 +10,11 @@ import ToastUI
 
 struct Dashboard: View {
    
+    @State private var navigationAction: Int? = 0
     @EnvironmentObject var session: SessionStore
     @EnvironmentObject var database: FirebaseDatabaseStore
     @State var showingAddGameAlert = false
-    
-    @State private var navigationAction: Int? = 0
+    @State var selectedGame: Game?
 
     func incrementPlayerWins() {
         for player in self.database.players {
@@ -40,21 +40,17 @@ struct Dashboard: View {
         NavigationView {
             ZStack(alignment: .leading) {
                 NavigationLink(
-                    destination: GameView(playerOne: "\(self.session.session?.displayName ?? "player one")", playerTwo: "CPU"),
-//                    destination: GameView(viewModel: self.createNewGameModel()),
-//                    destination: GameView(viewModel: GameViewViewModel(
-//                                                playerOne: "\(self.session.session?.displayName ?? "username")",
-//                                                playerTwo: "CPU",
-//                                                session: self.session,
-//                                                database: self.database)),
+                    destination: LazyView { GameView(
+                                                playerOne: "\(self.session.session?.displayName ?? "player one")",
+                                                playerTwo: "CPU")},
                     tag: 1,
                     selection: $navigationAction) {
                     EmptyView()
                 }
                 NavigationLink(
-                    destination: MultiPlayerGameView(game: Game())
-                                    .environmentObject(self.session)
-                                    .environmentObject(self.database),
+                    destination: LazyView { MultiPlayerGameView(game: selectedGame ?? Game())
+                                            .environmentObject(self.session)
+                                            .environmentObject(self.database)},
                     tag: 2,
                     selection: $navigationAction) {
                     EmptyView()
@@ -74,14 +70,20 @@ struct Dashboard: View {
                     .frame(height: 100)
                     Text("open games")
                         .font(.title)
-                    ScrollView(.vertical, showsIndicators: false) {
-                        ForEach(database.games) { game in
-                            NavigationLink(destination: MultiPlayerGameView(game: game)) {
+                    GeometryReader { geometry in
+                        ScrollView(.vertical, showsIndicators: false) {
+                            ForEach(database.games) { game in
                                 GamePreviewRow(game: game)
+                                    .onTapGesture {
+                                        print("game preview row tapped")
+                                        self.selectedGame = game
+                                        self.navigationAction = 2
+                                    }
+                                    .frame(minWidth: geometry.size.width, maxWidth: .infinity)
                             }
                         }
+                        .frame(width: geometry.size.width, height: 300)
                     }
-                    .frame(height: 300)
                 }.onAppear() {
                     self.database.observePlayers()
                     self.database.observeGames()
@@ -103,6 +105,11 @@ struct Dashboard: View {
                                 },
                                 .default(Text("two player")) {
                                     print("start two player game")
+                                    let newGame = Game(playerOne: self.session.session!.displayName, playerTwo: "")
+                                    let newGameRef = self.database.ref.child("games").child("\(newGame.uid)")
+                                    newGame.ref = newGameRef
+                                    self.database.addGame(game: newGame)
+                                    self.selectedGame = newGame
                                     self.navigationAction = 2
                                 },
                                 .cancel()
