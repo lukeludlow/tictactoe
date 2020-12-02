@@ -119,18 +119,13 @@ class Game: Identifiable, ObservableObject {
         self.winner = detectWinner()
         if self.winner != "" {
             print("game over, \(self.winner) won")
-//            if winner == playerOne {
-//                incrementPlayerWins()
-//            } else if winner == playerTwo {
-                // decrementPlayerWins()
-//            }
             self.isComplete = true
             return
         }
         if !anyEmptyCells() {
             print("game over, no empty cells")
             if self.winner == "" {
-                self.winner = "nobody"
+                self.winner = "tie"
             }
             self.isComplete = true
             return
@@ -150,20 +145,35 @@ class Game: Identifiable, ObservableObject {
         if cells[0...2].allSatisfy({ $0.value == XO.o }) {
             return playerTwo
         }
+        if cells[3...5].allSatisfy({ $0.value == XO.x }) {
+            return playerOne
+        }
+        if cells[3...5].allSatisfy({ $0.value == XO.o }) {
+            return playerTwo
+        }
+        if cells[6...8].allSatisfy({ $0.value == XO.x }) {
+            return playerOne
+        }
+        if cells[6...8].allSatisfy({ $0.value == XO.o }) {
+            return playerTwo
+        }
         // check for vertical three in a row
         if [cells[0], cells[3], cells[6]].allSatisfy({ $0.value == XO.x }) {
             return playerOne
-        } else if [cells[0], cells[3], cells[6]].allSatisfy({ $0.value == XO.o }) {
+        }
+        if [cells[0], cells[3], cells[6]].allSatisfy({ $0.value == XO.o }) {
             return playerTwo
         }
         if [cells[1], cells[4], cells[7]].allSatisfy({ $0.value == XO.x }) {
             return playerOne
-        } else if [cells[1], cells[4], cells[7]].allSatisfy({ $0.value == XO.o }) {
+        }
+        if [cells[1], cells[4], cells[7]].allSatisfy({ $0.value == XO.o }) {
             return playerTwo
         }
         if [cells[2], cells[5], cells[8]].allSatisfy({ $0.value == XO.x }) {
             return playerOne
-        } else if [cells[2], cells[5], cells[8]].allSatisfy({ $0.value == XO.o }) {
+        }
+        if [cells[2], cells[5], cells[8]].allSatisfy({ $0.value == XO.o }) {
             return playerTwo
         }
         // check for diagonal three in a row
@@ -174,7 +184,8 @@ class Game: Identifiable, ObservableObject {
         for diagonal in diagonalPermutations {
             if diagonal.allSatisfy({ cells[$0].value == XO.x }) {
                 return playerOne
-            } else if diagonal.allSatisfy({ cells[$0].value == XO.o }) {
+            }
+            if diagonal.allSatisfy({ cells[$0].value == XO.o }) {
                 return playerTwo
             }
         }

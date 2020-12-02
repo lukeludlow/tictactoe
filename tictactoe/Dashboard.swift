@@ -73,13 +73,15 @@ struct Dashboard: View {
                     GeometryReader { geometry in
                         ScrollView(.vertical, showsIndicators: false) {
                             ForEach(database.games) { game in
-                                GamePreviewRow(game: game)
-                                    .onTapGesture {
-                                        print("game preview row tapped")
-                                        self.selectedGame = game
-                                        self.navigationAction = 2
-                                    }
-                                    .frame(minWidth: geometry.size.width, maxWidth: .infinity)
+                                if !game.isComplete {
+                                    GamePreviewRow(game: game)
+                                        .onTapGesture {
+                                            print("game preview row tapped")
+                                            self.selectedGame = game
+                                            self.navigationAction = 2
+                                        }
+                                        .frame(minWidth: geometry.size.width, maxWidth: .infinity)
+                                }
                             }
                         }
                         .frame(width: geometry.size.width, height: 300)

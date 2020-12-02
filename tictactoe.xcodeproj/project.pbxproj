@@ -25,6 +25,7 @@
 		A37A061025705A9800E40A96 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37A060F25705A9800E40A96 /* RegisterView.swift */; };
 		A37A062825707CA800E40A96 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37A062725707CA800E40A96 /* Dashboard.swift */; };
 		A37ED2B92575B0D000B73DC4 /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37ED2B82575B0D000B73DC4 /* LazyView.swift */; };
+		A37ED2BD2577227B00B73DC4 /* ActiveAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37ED2BC2577227B00B73DC4 /* ActiveAlert.swift */; };
 		A3B8608D256F22B200194C5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3B8608C256F22B200194C5A /* Assets.xcassets */; };
 		A3B86090256F22B200194C5A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3B8608F256F22B200194C5A /* Preview Assets.xcassets */; };
 		E6BCFB24F93540050C399A49 /* Pods_tictactoe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67CE545F1CF36992511F5230 /* Pods_tictactoe.framework */; };
@@ -55,6 +56,7 @@
 		A37A060F25705A9800E40A96 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		A37A062725707CA800E40A96 /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
 		A37ED2B82575B0D000B73DC4 /* LazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyView.swift; sourceTree = "<group>"; };
+		A37ED2BC2577227B00B73DC4 /* ActiveAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveAlert.swift; sourceTree = "<group>"; };
 		A3B86085256F22B100194C5A /* tictactoe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tictactoe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3B8608C256F22B200194C5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A3B8608F256F22B200194C5A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				A31D83C825719D4400AFD9BB /* Cell.swift */,
 				A31D83CB25719D6D00AFD9BB /* XO.swift */,
 				A3143AD52573199000EFE075 /* MultiPlayerGameView.swift */,
+				A37ED2BC2577227B00B73DC4 /* ActiveAlert.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				A33FBA5F2570920E009204DC /* Player.swift in Sources */,
 				A37A060B2570574B00E40A96 /* LoginView.swift in Sources */,
 				A37A061025705A9800E40A96 /* RegisterView.swift in Sources */,
+				A37ED2BD2577227B00B73DC4 /* ActiveAlert.swift in Sources */,
 				A33FBA4D2570814D009204DC /* FirebaseDatabaseStore.swift in Sources */,
 				A33FBA55257081BB009204DC /* Game.swift in Sources */,
 				A37A062825707CA800E40A96 /* Dashboard.swift in Sources */,
