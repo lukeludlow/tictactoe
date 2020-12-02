@@ -65,12 +65,12 @@ struct LoginView: View {
                         self.navigationAction = 1
                     }
                 }
-                .toast(isPresented: $error, dismissAfter: 2.0) {
-                    print("error toast dismissed")
-                } content: {
-                    ToastView("error: \(errorText)")
-                        .toastViewStyle(ErrorToastViewStyle())
-                }
+//                .toast(isPresented: $error, dismissAfter: 2.0) {
+//                    print("error toast dismissed")
+//                } content: {
+//                    ToastView("error: \(errorText)")
+//                        .toastViewStyle(ErrorToastViewStyle())
+//                }
             }
         }
     }

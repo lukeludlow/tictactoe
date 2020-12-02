@@ -40,13 +40,13 @@ struct RegisterView: View {
                         print("\(String(describing: changeError))")
                     } else {
                         print("profile display name updated successfully")
+                        self.session.session!.displayName = displayName
                     }
                 }
                 let player = Player(uid: session.session?.uid ?? "", username: displayName, wins: 0, losses: 0)
                 self.database.addPlayer(player: player)
                 self.email = ""
                 self.password = ""
-                self.displayName = ""
                 self.success = true
             }
         }
@@ -79,21 +79,21 @@ struct RegisterView: View {
 //                    ToastView("loading...")
 //                        .toastViewStyle(IndefiniteProgressToastViewStyle())
 //                }
-            .toast(isPresented: $success, dismissAfter: 2.0) {
-                print("success toast dismissed")
-//                    self.showModal = false
-//                    self.presentationMode.wrappedValue.dismiss()
-                dismiss()
-            } content: {
-                ToastView("successfully registered")
-                    .toastViewStyle(SuccessToastViewStyle())
-            }
-            .toast(isPresented: $error, dismissAfter: 2.0) {
-                print("error toast dismissed")
-            } content: {
-                ToastView("error: \(errorText)")
-                    .toastViewStyle(ErrorToastViewStyle())
-            }
+//            .toast(isPresented: $success, dismissAfter: 2.0) {
+//                print("success toast dismissed")
+////                    self.showModal = false
+////                    self.presentationMode.wrappedValue.dismiss()
+//                dismiss()
+//            } content: {
+//                ToastView("successfully registered")
+//                    .toastViewStyle(SuccessToastViewStyle())
+//            }
+//            .toast(isPresented: $error, dismissAfter: 2.0) {
+//                print("error toast dismissed")
+//            } content: {
+//                ToastView("error: \(errorText)")
+//                    .toastViewStyle(ErrorToastViewStyle())
+//            }
             .padding()
         }
     }
