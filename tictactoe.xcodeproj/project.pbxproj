@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		A308BE22257049680077EF9B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A308BE21257049680077EF9B /* GoogleService-Info.plist */; };
 		A3143AD62573199000EFE075 /* MultiPlayerGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3143AD52573199000EFE075 /* MultiPlayerGameView.swift */; };
-		A31D83C3257196D500AFD9BB /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31D83C2257196D500AFD9BB /* GameView.swift */; };
-		A31D83C625719CD900AFD9BB /* GameViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31D83C525719CD900AFD9BB /* GameViewViewModel.swift */; };
 		A31D83C925719D4400AFD9BB /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31D83C825719D4400AFD9BB /* Cell.swift */; };
 		A31D83CC25719D6D00AFD9BB /* XO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31D83CB25719D6D00AFD9BB /* XO.swift */; };
 		A33FBA4D2570814D009204DC /* FirebaseDatabaseStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33FBA4C2570814D009204DC /* FirebaseDatabaseStore.swift */; };
@@ -38,8 +36,6 @@
 		67CE545F1CF36992511F5230 /* Pods_tictactoe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tictactoe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A308BE21257049680077EF9B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A3143AD52573199000EFE075 /* MultiPlayerGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiPlayerGameView.swift; sourceTree = "<group>"; };
-		A31D83C2257196D500AFD9BB /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
-		A31D83C525719CD900AFD9BB /* GameViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewViewModel.swift; sourceTree = "<group>"; };
 		A31D83C825719D4400AFD9BB /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		A31D83CB25719D6D00AFD9BB /* XO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XO.swift; sourceTree = "<group>"; };
 		A31D840B2573150F00AFD9BB /* SimulatorsList.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = SimulatorsList.txt; sourceTree = "<group>"; };
@@ -102,8 +98,6 @@
 				A33FBA54257081BB009204DC /* Game.swift */,
 				A33FBA5925708C77009204DC /* GamePreviewRow.swift */,
 				A33FBA5E2570920E009204DC /* Player.swift */,
-				A31D83C2257196D500AFD9BB /* GameView.swift */,
-				A31D83C525719CD900AFD9BB /* GameViewViewModel.swift */,
 				A31D83C825719D4400AFD9BB /* Cell.swift */,
 				A31D83CB25719D6D00AFD9BB /* XO.swift */,
 				A3143AD52573199000EFE075 /* MultiPlayerGameView.swift */,
@@ -332,9 +326,7 @@
 				A37A062825707CA800E40A96 /* Dashboard.swift in Sources */,
 				A37A05F025704D2A00E40A96 /* SessionStore.swift in Sources */,
 				A3693ACC256F3AED00CCAEE1 /* tictactoeApp.swift in Sources */,
-				A31D83C625719CD900AFD9BB /* GameViewViewModel.swift in Sources */,
 				A3143AD62573199000EFE075 /* MultiPlayerGameView.swift in Sources */,
-				A31D83C3257196D500AFD9BB /* GameView.swift in Sources */,
 				A37A05F52570531500E40A96 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
