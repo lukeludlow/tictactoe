@@ -12,17 +12,10 @@ import FirebaseDatabase
 
 class FirebaseDatabaseStore: ObservableObject {
     
-//    @EnvironmentObject var session: SessionStore
     @Published var games: [Game] = []
     @Published var players: [Player] = []
-//    @Published var currentPlayer: Player?
 
     var ref: DatabaseReference = Database.database().reference()
-    
-//    init() {
-//        getGames()
-//        getPlayers()
-//    }
     
     func observeGames() {
         let postRef = ref.child("games")
@@ -34,27 +27,18 @@ class FirebaseDatabaseStore: ObservableObject {
                     self.games.append(game)
                 }
             }
-            print("observe retrieved \(self.games.count) games")
         }
     }
     
     func addGame(game: Game) {
         print("addGame to database")
-//        let number = Int(Date.timeIntervalSinceReferenceDate * 1000)
         let postRef = ref.child("games").child(game.uid)
         postRef.setValue(game.toAnyObject())
     }
     
-//    func updateGame(key: String, game: Game) {
-//        let update = ["key": game.key, ]
-//        let childUpdate = ["\(key)": update]
-//        ref.updateChildValues(childUpdate)
-//    }
-    
     func observePlayers() {
         let postRef = ref.child("players")
         postRef.observe(DataEventType.value) { (snapshot) in
-//            print("getPlayers observed: \(snapshot.value as Any)")
             self.players = []
             for child in snapshot.children {
                 if let snapshot = child as? DataSnapshot,
@@ -62,8 +46,6 @@ class FirebaseDatabaseStore: ObservableObject {
                     self.players.append(player)
                 }
             }
-            print("observe retrieved \(self.players.count) players")
-//            self.currentPlayer = self.players[self.session.session?.uid ?? ""]
         }
     }
     

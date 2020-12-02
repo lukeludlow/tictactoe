@@ -120,6 +120,7 @@ class Game: Identifiable, ObservableObject {
         if self.winner != "" {
             print("game over, \(self.winner) won")
             self.isComplete = true
+            self.ref?.updateChildValues(self.toAnyObject() as! [AnyHashable : Any])
             return
         }
         if !anyEmptyCells() {
@@ -128,13 +129,27 @@ class Game: Identifiable, ObservableObject {
                 self.winner = "tie"
             }
             self.isComplete = true
+            self.ref?.updateChildValues(self.toAnyObject() as! [AnyHashable : Any])
             return
         }
-//        if currentPlayerTurn == "CPU" && !isComplete {
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 0.25, execute: {
-//                self.cpuMakeMove()
-//            })
-//        }
+        if currentPlayerTurn == "CPU" && !isComplete {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.25, execute: {
+                self.cpuMakeMove()
+            })
+        }
+    }
+    
+    func cpuMakeMove() {
+        if (anyEmptyCells() && currentPlayerTurn == "CPU") {
+            print("cpu make move")
+            let emptyCells = self.cells.filter { $0.value == XO.empty }
+            let cellToChange = emptyCells.randomElement()!
+            let index = self.cells.firstIndex(of: cellToChange)!
+            self.cells[index].value = XO.o
+            currentPlayerTurn = playerOne
+            self.ref?.updateChildValues(self.toAnyObject() as! [AnyHashable : Any])
+        }
+        tick()
     }
     
     func detectWinner() -> String {

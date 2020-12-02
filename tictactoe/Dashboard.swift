@@ -24,25 +24,25 @@ struct Dashboard: View {
             }
         }
     }
-    
-    func createNewGameModel() -> GameViewViewModel {
-        return GameViewViewModel(
-            playerOne: "\(self.session.session?.displayName ?? "player one")",
-            playerTwo: "CPU",
-            session: self.session,
-            database: self.database
-        )
+
+    func initNewGameAgainst(playerTwo: String) {
+        let newGame = Game(playerOne: self.session.session!.displayName, playerTwo: playerTwo)
+        let newGameRef = self.database.ref.child("games").child("\(newGame.uid)")
+        newGame.ref = newGameRef
+        self.database.addGame(game: newGame)
+        self.selectedGame = newGame
     }
-    
  
-    
     var body: some View {
         NavigationView {
             ZStack(alignment: .leading) {
                 NavigationLink(
-                    destination: LazyView { GameView(
-                                                playerOne: "\(self.session.session?.displayName ?? "player one")",
-                                                playerTwo: "CPU")},
+//                    destination: LazyView { GameView(
+//                                                playerOne: "\(self.session.session?.displayName ?? "player one")",
+//                                                playerTwo: "CPU")},
+                    destination: LazyView { MultiPlayerGameView(game: selectedGame ?? Game())
+                                            .environmentObject(self.session)
+                                            .environmentObject(self.database)},
                     tag: 1,
                     selection: $navigationAction) {
                     EmptyView()
@@ -103,15 +103,12 @@ struct Dashboard: View {
                             ActionSheet(title: Text("title"), message: Text("message"), buttons: [
                                 .default(Text("single player")) {
                                     print("start single player game")
+                                    self.initNewGameAgainst(playerTwo: "CPU")
                                     self.navigationAction = 1
                                 },
                                 .default(Text("two player")) {
                                     print("start two player game")
-                                    let newGame = Game(playerOne: self.session.session!.displayName, playerTwo: "")
-                                    let newGameRef = self.database.ref.child("games").child("\(newGame.uid)")
-                                    newGame.ref = newGameRef
-                                    self.database.addGame(game: newGame)
-                                    self.selectedGame = newGame
+                                    self.initNewGameAgainst(playerTwo: "")
                                     self.navigationAction = 2
                                 },
                                 .cancel()
@@ -131,7 +128,12 @@ struct Dashboard: View {
             .navigationBarTitle(Text("dashboard"))
             .navigationBarItems(trailing: Button("logout") {
                 print("logout")
-                self.session.signOut()
+                let successfulSignout = self.session.signOut()
+                if successfulSignout {
+                    print("signed out successfully")
+                } else {
+                    print("failed to sign out")
+                }
             })
             
         }
