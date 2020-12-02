@@ -17,18 +17,18 @@ struct ContentView: View {
     }
     
     var body: some View {
-        Group {
-            if (session.session != nil) {
-                Dashboard()
-                    .environmentObject(session)
-                    .environmentObject(database)
-            } else {
-//                let _ = print("content view session user: \(session.session)")
-                LoginView()
-                    .environmentObject(self.session)
-                    .environmentObject(self.database)
-            }
-        }.onAppear(perform: getUser)
+            Group {
+                if (session.session != nil) {
+                    Dashboard()
+                        .environmentObject(session)
+                        .environmentObject(database)
+                } else {
+                    LoginView()
+                        .environmentObject(self.session)
+                        .environmentObject(self.database)
+                }
+            }.onAppear(perform: getUser)
+//        }
     }
 }
 

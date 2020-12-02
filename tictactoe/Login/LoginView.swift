@@ -6,23 +6,21 @@
 //
 
 import SwiftUI
+import ToastUI
 
 struct LoginView: View {
     
-    @State private var navigationAction: Int? = 0
+    @EnvironmentObject var session: SessionStore
+    @EnvironmentObject var database: FirebaseDatabaseStore
     
+    @State private var navigationAction: Int? = 0
     @State var email: String = ""
     @State var password: String = ""
     @State var loading: Bool =  false
     @State var error: Bool = false
     @State var errorText: String = ""
-    
     @State var success: Bool = false
     
-    @State var showRegisterModal = false
-    
-    @EnvironmentObject var session: SessionStore
-    @EnvironmentObject var database: FirebaseDatabaseStore
 
     func login() {
         loading = true
@@ -32,7 +30,7 @@ struct LoginView: View {
             self.loading = false
             if error != nil {
                 print("\(String(describing: error))")
-                self.errorText = String(describing: error)
+                self.errorText = error?.localizedDescription ?? "error"
                 self.error = true
             } else {
                 self.email = ""
@@ -43,26 +41,38 @@ struct LoginView: View {
     }
     
     var body: some View {
-//        NavigationView {
-            VStack {
-                TextField("email address", text: $email)
-                    .padding()
-                SecureField("password", text: $password)
-                    .padding()
-                Button("login") {
-                    login()
+        NavigationView {
+            ZStack {
+                NavigationLink(destination: LazyView { RegisterView()
+                                                        .environmentObject(session)
+                                                        .environmentObject(database) },
+                               tag: 1,
+                               selection: $navigationAction) {
+                    EmptyView()
                 }
-                .padding()
-                Button("register") {
-                    self.showRegisterModal.toggle()
+                
+                VStack {
+                    TextField("email address", text: $email)
+                        .padding()
+                    SecureField("password", text: $password)
+                        .padding()
+                    Button("login") {
+                        login()
+                    }
+                    .padding()
+                    Button("register") {
+                        print("clicked register")
+                        self.navigationAction = 1
+                    }
+                }
+                .toast(isPresented: $error, dismissAfter: 2.0) {
+                    print("error toast dismissed")
+                } content: {
+                    ToastView("error: \(errorText)")
+                        .toastViewStyle(ErrorToastViewStyle())
                 }
             }
-            .sheet(isPresented: $showRegisterModal) {
-                RegisterView(showModal: $showRegisterModal)
-                    .environmentObject(self.session)
-                    .environmentObject(self.database)
-            }
-//        }
+        }
     }
 }
 

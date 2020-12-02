@@ -14,15 +14,9 @@ struct MultiPlayerGameView: View {
     @EnvironmentObject var database: FirebaseDatabaseStore
     @ObservedObject var game: Game
     @State var observedGameId: String = ""
-    var deallocPrinter: DeallocPrinter
-
 
     init(game: Game) {
-        print("init MultiPlayerGameView. game.uid=\(game.uid), " +
-                "game.playerOne=\(game.playerOne), game.playerTwo=\(game.playerTwo), " +
-                "game.ref=\(String(describing: game.ref))")
         self.game = game
-        self.deallocPrinter = DeallocPrinter(uid: game.uid)
     }
 
     func observeGame() {
@@ -38,15 +32,8 @@ struct MultiPlayerGameView: View {
     
     func createButton(linkedToCellAt: Int) -> some View {
         return Button(action: {
-//            print("clicked cell at \(linkedToCellAt) (inside game \(self.game.uid)")
             game.toggleCell(linkedToCellAt: linkedToCellAt)
-//            if self.session.session!.displayName == game.playerOne {
-//                game.cells[linkedToCellAt].value = XO.x
-//            } else if self.session.session!.displayName == game.playerTwo {
-//                game.cells[linkedToCellAt].value = XO.o
-//            }
             game.ref?.updateChildValues(game.toAnyObject() as! [AnyHashable : Any])
-//            game.ref?.updateChildValues(["cells": game.cells.map({ $0.toAnyObject() })])
         }) {
             Text("\(game.cells[linkedToCellAt].value.rawValue)")
                 .font(.largeTitle)
@@ -106,16 +93,6 @@ struct MultiPlayerGameView: View {
             }
             self.observeGame()
         }
-    }
-}
-
-class DeallocPrinter {
-    var uid: String
-    init(uid: String) {
-        self.uid = uid
-    }
-    deinit {
-        print("deallocated MultiPlayerGameView \(self.uid)")
     }
 }
 

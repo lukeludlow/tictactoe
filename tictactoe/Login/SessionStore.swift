@@ -12,12 +12,7 @@ import Firebase
 
 class SessionStore: ObservableObject {
     
-//    var didChange = PassthroughSubject<SessionStore, Never>()
     @Published var session: User?
-//    var session: User? { didSet {
-//        print("didSet session user")
-//        self.didChange.send(self)
-//    }}
     var handle: AuthStateDidChangeListenerHandle?
     
     init(session: User? = nil) {
@@ -39,10 +34,12 @@ class SessionStore: ObservableObject {
     }
     
     func signUp(email: String, password: String, handler: @escaping AuthDataResultCallback) {
+        print("sign up user \(email)")
         Auth.auth().createUser(withEmail: email, password: password, completion: handler)
     }
     
     func signIn(email: String, password: String, handler: @escaping AuthDataResultCallback) {
+        print("sign in user \(email)")
         Auth.auth().signIn(withEmail: email, password: password, completion: handler)
     }
     
