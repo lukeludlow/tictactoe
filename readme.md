@@ -36,6 +36,7 @@ https://developer.apple.com/tutorials/swiftui
 https://benmcmahen.com/authentication-with-swiftui-and-firebase/
 https://github.com/marty-suzuki/TicTacToe-SwiftUI/blob/master/
 https://medium.com/@guilhermegirotto/launch-multiple-simulators-in-a-single-build-xcode-9-xcode-10-5c8d13f01376
+https://www.iditect.com/how-to/58549151.html
 
 
 a.
@@ -72,6 +73,12 @@ even though they're just playing against a CPU.
 
 c.3. To complete task 3, // TODO
 c.4. To complete task 4, // TODO
+
+To shake the device, it was difficult to do this with SwiftUI.
+I accomplished it by creating a custom NSNotification type, 
+then creating an extension for UIWindow, then in my dashboard view 
+I added a .onReceive to the body that listens to the device shaken publisher.
+
 
 
 d.

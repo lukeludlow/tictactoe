@@ -24,7 +24,7 @@ struct Dashboard: View {
             }
         }
     }
-
+    
     func initNewGameAgainst(playerTwo: String) {
         let newGame = Game(playerOne: self.session.session!.displayName, playerTwo: playerTwo)
         let newGameRef = self.database.ref.child("games").child("\(newGame.uid)")
@@ -37,9 +37,6 @@ struct Dashboard: View {
         NavigationView {
             ZStack(alignment: .leading) {
                 NavigationLink(
-//                    destination: LazyView { GameView(
-//                                                playerOne: "\(self.session.session?.displayName ?? "player one")",
-//                                                playerTwo: "CPU")},
                     destination: LazyView { MultiPlayerGameView(game: selectedGame ?? Game())
                                             .environmentObject(self.session)
                                             .environmentObject(self.database)},
@@ -97,7 +94,7 @@ struct Dashboard: View {
                         Spacer()
                         Button("+") {
                             print("add")
-                            self.showingAddGameAlert.toggle()
+                            self.showingAddGameAlert = true
                         }
                         .actionSheet(isPresented: $showingAddGameAlert) {
                             ActionSheet(title: Text("title"), message: Text("message"), buttons: [
@@ -123,6 +120,12 @@ struct Dashboard: View {
                         .shadow(color: Color.black.opacity(0.3), radius: 3, x: 3, y: 3)
                         .padding()
                     }
+                    .onReceive(NotificationCenter.default.publisher(for: .deviceDidShakeNotification)) {_ in
+                        if self.navigationAction == nil || self.navigationAction == 0 {
+                            self.showingAddGameAlert = true
+                        }
+                    }
+                    
                 }
             }
             .navigationBarTitle(Text("dashboard"))
@@ -135,17 +138,26 @@ struct Dashboard: View {
                     print("failed to sign out")
                 }
             })
-            
+        
         }
+    }
+}
+
+extension NSNotification.Name {
+    public static let deviceDidShakeNotification = NSNotification.Name("MyDeviceDidShakeNotification")
+}
+
+extension UIWindow {
+    open override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        super.motionEnded(motion, with: event)
+        NotificationCenter.default.post(name: .deviceDidShakeNotification, object: event)
     }
 }
 
 struct Dashboard_Previews: PreviewProvider {
     static var previews: some View {
-//        NavigationView {
-            Dashboard()
-                .environmentObject(SessionStore())
-                .environmentObject(FirebaseDatabaseStore())
-//        }
+        Dashboard()
+            .environmentObject(SessionStore())
+            .environmentObject(FirebaseDatabaseStore())
     }
 }
