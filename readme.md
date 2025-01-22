@@ -1,11 +1,6 @@
 #  tictactoe 
 
 ## a
-A6 - tictactoe
-Luke Ludlow
-u1216122
-luke.ludlow@utah.edu
-
 
 ## b
 This app was developed for iOS 14.0/14.2 using Xcode 12.
